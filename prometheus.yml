@@ -1,7 +1,6 @@
-global:
-  scrape_interval: 15s
-
 scrape_configs:
-  - job_name: 'simple-node-monitoring'
+  - job_name: 'nestjs-prisma-swagger'
+    scrape_interval: 30s
+    scrape_timeout: 20s
     static_configs:
       - targets: ['nest.hascar.co.id:80']
