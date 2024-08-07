@@ -9,11 +9,19 @@ export class AppController {
 
   @Get('signup')
   getSignupPage(@Res() res: Response): void {
-    res.sendFile(join(__dirname, '..', 'public', 'signup.html'));
+    const filePath = join(__dirname, '..', 'public', 'signup.html');
+    res.sendFile(filePath, { root: 'dist' });
   }
 
   @Get('login')
   getLoginPage(@Res() res: Response): void {
-    res.sendFile(join(__dirname, '..', 'public', 'signin.html'));
+    const filePath = join(__dirname, '..', 'public', 'login.html');
+    res.sendFile(filePath, { root: 'dist' });
+  }
+
+  @Get()
+  getLandingPage(@Res() res: Response): void {
+    const filePath = join(__dirname, '..', 'public', 'index.html');
+    res.sendFile(filePath, { root: 'dist' });
   }
 }
