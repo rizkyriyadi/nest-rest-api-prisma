@@ -9,11 +9,11 @@ export class AppController {
 
   @Get('signup')
   getSignupPage(@Res() res: Response): void {
-    res.sendFile(join(__dirname, '..', 'dist', 'public', 'signup.html'));
+    res.sendFile(join(__dirname, 'dist', 'public', 'signup.html'));
   }
 
   @Get('login')
   getLoginPage(@Res() res: Response): void {
-    res.sendFile(join(__dirname, '..', 'dist', 'public', 'signin.html'));
+    res.sendFile(join(__dirname, 'dist', 'public', 'signin.html'));
   }
 }
