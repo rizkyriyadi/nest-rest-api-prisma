@@ -7,11 +7,6 @@ import { join } from 'path';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
   @Get('signup')
   getSignupPage(@Res() res: Response): void {
     res.sendFile(join(__dirname, '..', 'public', 'signup.html'));
