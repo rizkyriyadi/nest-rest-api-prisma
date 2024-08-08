@@ -7,15 +7,11 @@ import { Response } from 'express';
 export class AppController {
   @Get('signup')
   getSignupPage(@Res() res: Response): void {
-    const filePath = resolve('dist/public/signup.html');
-    console.log('Serving file from:', filePath);
-    res.sendFile(filePath);
+    res.sendFile(join(__dirname, '..', 'public', 'signup.html'));
   }
 
   @Get('login')
   getLoginPage(@Res() res: Response): void {
-    const filePath = resolve('dist/public/login.html');
-    console.log('Serving file from:', filePath);
-    res.sendFile(filePath);
+    res.sendFile(join(__dirname, '..', 'public', 'login.html'));
   }
 }
