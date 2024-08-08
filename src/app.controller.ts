@@ -1,11 +1,17 @@
 import { Controller, Get, Res } from '@nestjs/common';
+import { AppService } from './app.service';
 import { join } from 'path';
+import { Response } from 'express';
 
 @Controller()
 export class AppController {
-  @Get()
-  getIndexHtml(@Res() res) {
-    const filePath = join(__dirname, '..', 'dist', 'public', 'index.html');
-    res.sendFile(filePath);
+  @Get('signup')
+  getSignupPage(@Res() res: Response): void {
+    res.sendFile(join(__dirname, '..', 'public', 'signup.html'));
+  }
+
+  @Get('login')
+  getLoginPage(@Res() res: Response): void {
+    res.sendFile(join(__dirname, '..', 'public', 'login.html'));
   }
 }
